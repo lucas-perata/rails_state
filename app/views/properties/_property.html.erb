@@ -1,0 +1,37 @@
+<div id="<%= dom_id property %>">
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Name:</strong>
+    <%= property.name %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Address:</strong>
+    <%= property.address %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Price:</strong>
+    <%= property.price %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Rooms:</strong>
+    <%= property.rooms %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Square meters:</strong>
+    <%= property.square_meters %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Bathrooms:</strong>
+    <%= property.bathrooms %>
+  </p>
+
+  <% if action_name != "show" %>
+    <%= link_to "Show this property", property, class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+    <%= link_to 'Edit this property', edit_property_path(property), class: "rounded-lg py-3 ml-2 px-5 bg-gray-100 inline-block font-medium" %>
+    <hr class="mt-6">
+  <% end %>
+</div>
