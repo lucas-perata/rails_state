@@ -1,9 +1,7 @@
 require "application_system_test_case"
 
 class PropertiesTest < ApplicationSystemTestCase
-  setup do
-    @property = properties(:one)
-  end
+  setup { @property = properties(:one) }
 
   test "visiting the index" do
     visit properties_url

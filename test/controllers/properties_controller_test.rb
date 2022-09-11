@@ -1,9 +1,7 @@
 require "test_helper"
 
 class PropertiesControllerTest < ActionDispatch::IntegrationTest
-  setup do
-    @property = properties(:one)
-  end
+  setup { @property = properties(:one) }
 
   test "should get index" do
     get properties_url
@@ -17,7 +15,17 @@ class PropertiesControllerTest < ActionDispatch::IntegrationTest
 
   test "should create property" do
     assert_difference("Property.count") do
-      post properties_url, params: { property: { address: @property.address, bathrooms: @property.bathrooms, name: @property.name, price: @property.price, rooms: @property.rooms, square_meters: @property.square_meters } }
+      post properties_url,
+           params: {
+             property: {
+               address: @property.address,
+               bathrooms: @property.bathrooms,
+               name: @property.name,
+               price: @property.price,
+               rooms: @property.rooms,
+               square_meters: @property.square_meters
+             }
+           }
     end
 
     assert_redirected_to property_url(Property.last)
@@ -34,14 +42,22 @@ class PropertiesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update property" do
-    patch property_url(@property), params: { property: { address: @property.address, bathrooms: @property.bathrooms, name: @property.name, price: @property.price, rooms: @property.rooms, square_meters: @property.square_meters } }
+    patch property_url(@property),
+          params: {
+            property: {
+              address: @property.address,
+              bathrooms: @property.bathrooms,
+              name: @property.name,
+              price: @property.price,
+              rooms: @property.rooms,
+              square_meters: @property.square_meters
+            }
+          }
     assert_redirected_to property_url(@property)
   end
 
   test "should destroy property" do
-    assert_difference("Property.count", -1) do
-      delete property_url(@property)
-    end
+    assert_difference("Property.count", -1) { delete property_url(@property) }
 
     assert_redirected_to properties_url
   end
