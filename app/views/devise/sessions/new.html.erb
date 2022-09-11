@@ -1,6 +1,6 @@
-<form class="container form-devise">
+<div class="container form-devise">
     <h2>Log in</h2>
-        <%= form_for(resource, as:resource_name, url: session_path(resource_name)) do |f| %>
+        <%= form_for(resource, as:resource_name, url: session_path(resource_name), data: { turbo: false }) do |f| %>
         <!-- Email input -->
           <div class="form-outline mb-4">
             <%= f.label :email,  class: 'form-label'%><br />
@@ -38,7 +38,7 @@
           <div>
             <%= render "devise/shared/links" %>
           </div>
-  </form>
+  </div>
 <% end %>
 
 

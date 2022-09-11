@@ -7,6 +7,5 @@ class Account < ApplicationRecord
          :recoverable,
          :rememberable,
          :validatable,
-         :trackable,
-         :confirmable
+         :trackable
 end
