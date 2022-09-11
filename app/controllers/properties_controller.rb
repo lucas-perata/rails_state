@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class PropertiesController < ApplicationController
   before_action :set_property, only: %i[show edit update destroy]
 
@@ -5,15 +7,13 @@ class PropertiesController < ApplicationController
     @properties = Property.all
   end
 
-  def show
-  end
+  def show; end
 
   def new
     @property = Property.new
   end
 
-  def edit
-  end
+  def edit; end
 
   def create
     @property = Property.new(property_params)
@@ -22,7 +22,7 @@ class PropertiesController < ApplicationController
       if @property.save
         format.html do
           redirect_to property_url(@property),
-                      notice: "Property was successfully created."
+                      notice: 'Property was successfully created.'
         end
         format.json { render :show, status: :created, location: @property }
       else
@@ -39,7 +39,7 @@ class PropertiesController < ApplicationController
       if @property.update(property_params)
         format.html do
           redirect_to property_url(@property),
-                      notice: "Property was successfully updated."
+                      notice: 'Property was successfully updated.'
         end
         format.json { render :show, status: :ok, location: @property }
       else
@@ -57,7 +57,7 @@ class PropertiesController < ApplicationController
     respond_to do |format|
       format.html do
         redirect_to properties_url,
-                    notice: "Property was successfully destroyed."
+                    notice: 'Property was successfully destroyed.'
       end
       format.json { head :no_content }
     end

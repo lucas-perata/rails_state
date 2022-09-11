@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -10,44 +12,44 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_09_07_040035) do
-  create_table "accounts", force: :cascade do |t|
-    t.string "first_name", default: "", null: false
-    t.string "last_name", default: "", null: false
-    t.string "url"
-    t.string "email", default: "", null: false
-    t.string "encrypted_password", default: "", null: false
-    t.string "reset_password_token"
-    t.datetime "reset_password_sent_at"
-    t.datetime "remember_created_at"
-    t.integer "sign_in_count", default: 0, null: false
-    t.datetime "current_sign_in_at"
-    t.datetime "last_sign_in_at"
-    t.string "current_sign_in_ip"
-    t.string "last_sign_in_ip"
-    t.string "confirmation_token"
-    t.datetime "confirmed_at"
-    t.datetime "confirmation_sent_at"
-    t.string "unconfirmed_email"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["email"], name: "index_accounts_on_email", unique: true
-    t.index ["reset_password_token"],
-            name: "index_accounts_on_reset_password_token",
+ActiveRecord::Schema[7.0].define(version: 20_220_907_040_035) do
+  create_table 'accounts', force: :cascade do |t|
+    t.string 'first_name', default: '', null: false
+    t.string 'last_name', default: '', null: false
+    t.string 'url'
+    t.string 'email', default: '', null: false
+    t.string 'encrypted_password', default: '', null: false
+    t.string 'reset_password_token'
+    t.datetime 'reset_password_sent_at'
+    t.datetime 'remember_created_at'
+    t.integer 'sign_in_count', default: 0, null: false
+    t.datetime 'current_sign_in_at'
+    t.datetime 'last_sign_in_at'
+    t.string 'current_sign_in_ip'
+    t.string 'last_sign_in_ip'
+    t.string 'confirmation_token'
+    t.datetime 'confirmed_at'
+    t.datetime 'confirmation_sent_at'
+    t.string 'unconfirmed_email'
+    t.datetime 'created_at', null: false
+    t.datetime 'updated_at', null: false
+    t.index ['email'], name: 'index_accounts_on_email', unique: true
+    t.index ['reset_password_token'],
+            name: 'index_accounts_on_reset_password_token',
             unique: true
   end
 
-  create_table "properties", force: :cascade do |t|
-    t.string "name"
-    t.string "address"
-    t.integer "price"
-    t.integer "rooms"
-    t.integer "square_meters"
-    t.integer "bathrooms"
-    t.string "photo"
-    t.integer "account_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["account_id"], name: "index_properties_on_account_id"
+  create_table 'properties', force: :cascade do |t|
+    t.string 'name'
+    t.string 'address'
+    t.integer 'price'
+    t.integer 'rooms'
+    t.integer 'square_meters'
+    t.integer 'bathrooms'
+    t.string 'photo'
+    t.integer 'account_id'
+    t.datetime 'created_at', null: false
+    t.datetime 'updated_at', null: false
+    t.index ['account_id'], name: 'index_properties_on_account_id'
   end
 end
