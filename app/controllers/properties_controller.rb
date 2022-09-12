@@ -78,7 +78,8 @@ class PropertiesController < ApplicationController
       :price,
       :rooms,
       :square_meters,
-      :bathrooms
+      :bathrooms,
+      images: []
     )
   end
 end
