@@ -29,6 +29,12 @@
     <%= property.bathrooms %>
   </p>
 
+<div class="">
+    <%= property_thumbnail  %>
+  </p>
+</div>
+
+
   <% if action_name != "show" %>
     <%= link_to "Show this property", property, class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
     <%= link_to 'Edit this property', edit_property_path(property), class: "rounded-lg py-3 ml-2 px-5 bg-gray-100 inline-block font-medium" %>

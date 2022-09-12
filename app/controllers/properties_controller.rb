@@ -8,7 +8,8 @@ class PropertiesController < ApplicationController
     @properties = Property.all
   end
 
-  def show; end
+  def show
+  end
 
   def new
     @property = Property.new

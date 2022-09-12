@@ -1,0 +1,9 @@
+<% @properties.each do |property| %>
+    <div class="col-3">
+        <% if  property.images.attached? %> 
+            <% property.images.each do |p|   %> 
+            <%= image_tag(p) %>
+            <% end %>
+        <% end %>
+    </div>
+<% end %>
