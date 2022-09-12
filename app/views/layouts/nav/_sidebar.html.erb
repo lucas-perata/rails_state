@@ -1,18 +1,19 @@
-        <nav class="col-md-2 mt-5 d-none d-md-block bg-light sidebar">
+        <nav id="dashboard" class="col-md-2 mt-3 d-none d-md-block bg-light sidebar">
           <div class="sidebar-sticky">
             <ul class="nav flex-column">
+            <li class="nav-item">
+                <a class="nav-link" href="#">
+                  <span data-feather="users"></span>
+                  Customers
+                </a>
+              </li>
               <li class="nav-item">
                 <%= link_to "Dashboard", dashboard_path, class:"nav-link" %>
               </li>
               <li class="nav-item">
                 <%= link_to "Properties", properties_path, class:"nav-link" %>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">
-                  <span data-feather="users"></span>
-                  Customers
-                </a>
-              </li>
+              
               <li class="nav-item">
                 <a class="nav-link" href="#">
                   <span data-feather="bar-chart-2"></span>
