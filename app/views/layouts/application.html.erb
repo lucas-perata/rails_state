@@ -13,11 +13,16 @@
 
   <body>
 
-    <% if ["public", "devise"].include?(controller.controller_name) %>
+    <% if ["public", "devise", "sessions"].include?(controller.controller_name) %>
     <header class="p-2 bg-light">
       <%= render 'layouts/nav/public' %>
     </header>
+    <main role="main" class="">
           <%= yield %>
+    </main>
+    <footer class="footer mt-auto py-3">
+      <%= render 'layouts/footer' %>
+    </footer>
     <% else %>
       <%= render "layouts/nav/dashboard" %>
     <div class="container-fluid">
@@ -29,10 +34,6 @@
           <%= yield %>
     </main>
     <% end %>
-    
-    <footer class="footer mt-auto py-3">
-      <%= render 'layouts/footer' %>
-    </footer>
     
   </body>
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
@@ -48,37 +49,4 @@
     <script>
       feather.replace()
     </script>
-
-    <!-- Graphs -->
-    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.7.1/dist/Chart.min.js"></script>
-    <script>
-      var ctx = document.getElementById("myChart");
-      var myChart = new Chart(ctx, {
-        type: 'line',
-        data: {
-          labels: ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
-          datasets: [{
-            data: [15339, 21345, 18483, 24003, 23489, 24092, 12034],
-            lineTension: 0,
-            backgroundColor: 'transparent',
-            borderColor: '#007bff',
-            borderWidth: 4,
-            pointBackgroundColor: '#007bff'
-          }]
-        },
-        options: {
-          scales: {
-            yAxes: [{
-              ticks: {
-                beginAtZero: false
-              }
-            }]
-          },
-          legend: {
-            display: false,
-          }
-        }
-      });
-    </script>
-
 </html>
