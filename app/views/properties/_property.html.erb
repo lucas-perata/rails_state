@@ -1,43 +1,45 @@
-<div id="<%= dom_id property %>">
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Name:</strong>
-    <%= property.name %>
-  </p>
-
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Address:</strong>
-    <%= property.address %>
-  </p>
-
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Price:</strong>
-    <%= property.price %>
-  </p>
-
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Rooms:</strong>
-    <%= property.rooms %>
-  </p>
-
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Square meters:</strong>
-    <%= property.square_meters %>
-  </p>
-
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Bathrooms:</strong>
-    <%= property.bathrooms %>
-  </p>
-
-<div class="">
-    <%= property_show(property)  %>
-  </p>
+<div class="property-main-photo" style="background-image:url('<%= property_image_url(property)%>')">
+  <div class="photo-overlay">
+  </div>
 </div>
 
+<div class="container">
+  <div class="row">
+    <div class="col-8">
+      <p>
+        <strong>Name:</strong>
+        <%= property.name %>
+      </p>
 
-  <% if action_name != "show" %>
-    <%= link_to "Show this property", property, class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
-    <%= link_to 'Edit this property', edit_property_path(property), class: "rounded-lg py-3 ml-2 px-5 bg-gray-100 inline-block font-medium" %>
-    <hr class="mt-6">
-  <% end %>
+      <p>
+        <strong>Address:</strong>
+        <%= property.address %>
+      </p>
+
+      <p>
+        <strong>Price:</strong>
+        <%= property.price %>
+      </p>
+
+      <p>
+        <strong>Rooms:</strong>
+        <%= property.rooms %>
+      </p>
+
+      <p>
+        <strong>Square meters:</strong>
+        <%= property.square_meters %>
+      </p>
+
+      <p>
+        <strong>Bathrooms:</strong>
+        <%= property.bathrooms %>
+      </p>
+
+    </div>
+
+    <div class="col-4">
+      <%= render "properties/agent_details" %>
+    </div>
+  </div>
 </div>

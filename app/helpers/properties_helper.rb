@@ -10,4 +10,10 @@ module PropertiesHelper
   def property_main(p)
     p.images.attached? ? property_show(p) : 'placeholder'
   end
+
+  def property_image_url(p)
+    p.images.each do |p|
+      return url_for(p)
+    end
+  end 
 end
