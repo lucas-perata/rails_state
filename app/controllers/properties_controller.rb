@@ -9,7 +9,9 @@ class PropertiesController < ApplicationController
     @properties = Property.all
   end
 
-  def show; end
+  def show
+    @agent = @property.account
+  end
 
   def new
     @property = Property.new

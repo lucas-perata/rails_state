@@ -8,4 +8,8 @@ class Account < ApplicationRecord
          :rememberable,
          :validatable,
          :trackable
+
+  def company
+    "test company"
+  end 
 end
