@@ -2,15 +2,14 @@
 
 class PropertiesController < ApplicationController
   before_action :set_property, only: %i[show edit update destroy]
-  before_action :authenticate_account!, only: %i[:new, :create, :destroy]
-  before_action :set_sidebar, except: [:show]  
+  before_action :authenticate_account!, only: %i[new create destroy]
+  before_action :set_sidebar, except: [:show]
 
   def index
     @properties = Property.all
   end
 
-  def show
-  end
+  def show; end
 
   def new
     @property = Property.new
@@ -20,7 +19,7 @@ class PropertiesController < ApplicationController
 
   def create
     @property = Property.new(property_params)
-    @property.account_id = current_account.id 
+    @property.account_id = current_account.id
 
     respond_to do |format|
       if @property.save
@@ -75,7 +74,7 @@ class PropertiesController < ApplicationController
 
   def set_sidebar
     @show_sidebar = true
-  end 
+  end
 
   def property_params
     params.require(:property).permit(
