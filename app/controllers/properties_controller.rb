@@ -3,6 +3,7 @@
 class PropertiesController < ApplicationController
   before_action :set_property, only: %i[show edit update destroy]
   before_action :authenticate_account!, only: %i[:new, :create, :destroy]
+  before_action :set_sidebar, except: [:show]  
 
   def index
     @properties = Property.all
@@ -71,6 +72,10 @@ class PropertiesController < ApplicationController
   def set_property
     @property = Property.find(params[:id])
   end
+
+  def set_sidebar
+    @show_sidebar = true
+  end 
 
   def property_params
     params.require(:property).permit(
