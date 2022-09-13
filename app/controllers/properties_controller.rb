@@ -86,6 +86,7 @@ class PropertiesController < ApplicationController
       :rooms,
       :square_meters,
       :bathrooms,
+      :parking_spaces,
       images: []
     )
   end
