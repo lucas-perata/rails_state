@@ -11,6 +11,7 @@ class PropertiesController < ApplicationController
 
   def show
     @agent = @property.account
+    @properties = Property.where(account_id: @agent.id).where.not(id: @property.id)
   end
 
   def new

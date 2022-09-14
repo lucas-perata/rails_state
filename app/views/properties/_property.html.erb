@@ -72,21 +72,30 @@
       </div>
     </div>
 
-    <div class="col-sm-3 text-center bg-light">
+    <div class="col-sm-3 text-center w-5 bg-light">
       <div class="row">
         <div class="col">
+          <i class="fa fa-bed" aria-hidden="true"></i>
           <p class="m-0">Rooms</p>
           <span class="lead"><%= @property.rooms %></span>
         </div>
 
         <div class="col">
+          <i class="fa fa-bath" aria-hidden="true"></i>
           <p class="m-0">Bathrooms</p>
           <span class="lead"><%= @property.bathrooms %></span>
         </div>
 
         <div class="col">
+          <i class="fa fa-map"></i>
           <p class="m-0">M2</p>
           <span class="lead"><%= @property.square_meters %></span>
+        </div>
+
+        <div class="col">
+          <i class="fa fa-car"></i>
+          <p class="m-0">Parking</p>
+          <span class="lead"><%= @property.parking_spaces %></span>
         </div>
       </div>
     </div>
@@ -105,5 +114,10 @@
         ></strong
       >
     </div>
+  </div>
+
+  <div class="container">
+    <div class="h4 mb-5">More properties by <%=@agent.first_name %></div>
+    <div class="row"><%= render 'property_list'%></div>
   </div>
 </div>
