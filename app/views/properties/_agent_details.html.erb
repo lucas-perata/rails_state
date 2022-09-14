@@ -1,6 +1,7 @@
-<div class="">
-    <h3>    <%= @agent.first_name%></h3> 
-    <p><%= @agent.company %></p> 
+<div class="text-center border pb-2 col-sm">
+  <h3><%= @agent.first_name%></h3>
+  <p><%= @agent.company %></p>
+  <img class="img-circle" src="<%= profile_picture(@agent) %>" alt="" />
 
-    <button class="btn btn-info">Contact for more details</button>
+  <button class="btn btn-info">Contact for more details</button>
 </div>
