@@ -23,6 +23,11 @@ property.errors.any? %>
   form-control" %>
 </div>
 
+<div class="my-5">
+  <%= form.label :status %> <%= form.select(:status,
+  options_for_select([["Rent", "Rent"], ["Sell", "Sell"]])) %>
+</div>
+
 <% 5.times do %>
 
 <div><%= form.file_field :images, multiple: true %></div>

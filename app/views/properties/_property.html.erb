@@ -47,9 +47,13 @@
     <div class="col-7">
       <p class=""><%= @property.address %></p>
       <p class="h2">
-        <%= @property.price > 0 ? number_to_currency(@property.price, precision:
-        0) : "For sale" %>
-      </p>
+        <% if @property.status == "Sell" %>
+          <%= @property.price > 0 ? number_to_currency(@property.price, precision:
+          0) : "For sale" %>
+        <% else %>
+          <%= number_to_currency(@property.price, precision:0) %> monthly
+        <% end %>
+        </p>
 
       <div class="">
         <p class="h2"><%= property.name %></p>
