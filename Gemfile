@@ -78,3 +78,5 @@ end
 gem 'bootstrap', '~> 5.2.0'
 gem 'jquery-rails'
 gem 'rubocop', '~> 1.36', require: false
+gem "font-awesome-sass", "~> 6.2.0"
+
