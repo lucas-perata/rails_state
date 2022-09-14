@@ -2,6 +2,7 @@
 
 class Account < ApplicationRecord
   has_many :properties
+  has_one_attached :avatar
   devise :database_authenticatable,
          :registerable,
          :recoverable,
