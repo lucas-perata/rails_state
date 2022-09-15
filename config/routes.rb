@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   get '/dashboard' => 'dashboard#index', as: :dashboard
   get '/profile/:id' => 'dashboard#profile', as: :profile
   get 'dashboard/properties'
+  post 'agent/contact' => 'properties#email_agent' , as: :email_agent
 
   resources :properties
   devise_for :accounts

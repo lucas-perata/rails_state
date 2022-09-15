@@ -8,18 +8,11 @@
 
   <div class="mt-2">
     <button
-      class="btn btn-block btn-info mb-2"
+      class="btn btn-block btn-info"
       id="show-tel"
       data-tel="<%= @agent.phone %>"
     >
       <i class="fa fa-phone"></i> Call me
-    </button>
-    <button
-      class="btn text-center btn-block btn-info"
-      id="show-email"
-      data-email="<%= @agent.email %>"
-    >
-      <i class="fa fa-envelope"></i> Email me
     </button>
 
     <!-- Button trigger modal -->
@@ -29,9 +22,13 @@
       data-toggle="modal"
       data-target="#exampleModal"
     >
-      Modal test
+      <i class="fa fa-envelope"></i> Email me
     </button>
 
+    
+    <div class="btn btn-success btn-block">
+      <i class="fa fa-envelope"></i> <%= link_to "My profile", profile_path(@agent.id), class:"text-white text-decoration-none " %>
+    </div>
     <!-- Modal -->
     <div
       class="modal fade"
@@ -41,32 +38,7 @@
       aria-labelledby="exampleModalLabel"
       aria-hidden="true"
     >
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-            <button
-              type="button"
-              class="close"
-              data-dismiss="modal"
-              aria-label="Close"
-            >
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">Testing Modal</div>
-          <div class="modal-footer">
-            <button
-              type="button"
-              class="btn btn-secondary"
-              data-dismiss="modal"
-            >
-              Close
-            </button>
-            <button type="button" class="btn btn-primary">Save changes</button>
-          </div>
-        </div>
-      </div>
+      <%= render "properties/modal_contact" %>
     </div>
   </div>
 </div>

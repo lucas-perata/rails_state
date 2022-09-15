@@ -69,6 +69,16 @@ class PropertiesController < ApplicationController
     end
   end
 
+  def email_agent 
+    #sent email
+    #set a mailer
+    first_name = params[:first_name]
+    last_name = params[:last_name]
+    email = params[:email]
+    message = params[:message]
+    format.json {head :no_content}
+  end 
+
   private
 
   def set_property
