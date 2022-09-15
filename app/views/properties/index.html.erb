@@ -34,9 +34,9 @@
           <td><%= property.address %></td>
           <td><%= property.status %></td>
           <% if property.status == "Rent" %>
-            <td><%= number_to_currency(property.price, precision:0) %> /m</td>
-              <% else %>
-            <td><%= number_to_currency(property.price, precision:0) %></td>
+          <td><%= number_to_currency(property.price, precision:0) %> /m</td>
+          <% else %>
+          <td><%= number_to_currency(property.price, precision:0) %></td>
           <% end %>
           <td><%= property.rooms %></td>
           <td><%= property.bathrooms %></td>

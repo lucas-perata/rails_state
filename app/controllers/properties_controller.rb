@@ -6,7 +6,7 @@ class PropertiesController < ApplicationController
   before_action :set_sidebar, except: [:show]
 
   def index
-    @properties = Property.all
+    @properties = Property.where(account_id: current_account.id)
   end
 
   def show
