@@ -1,7 +1,72 @@
-<div class="text-center border pb-2 col-sm">
+<div class="border text-center p-3 pb-2 col-sm">
   <h3><%= @agent.first_name%></h3>
   <p><%= @agent.company %></p>
-  <img class="img-circle" src="<%= profile_picture(@agent) %>" alt="" />
 
-  <button class="btn btn-info">Contact for more details</button>
+  <%= link_to profile_path(@agent.id) do %>
+  <img class="img-circle" src="<%= profile_picture(@agent) %>" alt="" />
+  <% end %>
+
+  <div class="mt-2">
+    <button
+      class="btn btn-block btn-info mb-2"
+      id="show-tel"
+      data-tel="<%= @agent.phone %>"
+    >
+      <i class="fa fa-phone"></i> Call me
+    </button>
+    <button
+      class="btn text-center btn-block btn-info"
+      id="show-email"
+      data-email="<%= @agent.email %>"
+    >
+      <i class="fa fa-envelope"></i> Email me
+    </button>
+
+    <!-- Button trigger modal -->
+    <button
+      type="button"
+      class="btn btn-primary btn-block"
+      data-toggle="modal"
+      data-target="#exampleModal"
+    >
+      Modal test
+    </button>
+
+    <!-- Modal -->
+    <div
+      class="modal fade"
+      id="exampleModal"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">Testing Modal</div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-dismiss="modal"
+            >
+              Close
+            </button>
+            <button type="button" class="btn btn-primary">Save changes</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
