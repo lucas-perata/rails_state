@@ -1,6 +1,11 @@
 <div class="w-full">
   <% if notice.present? %>
-    <p class="py-2 px-3 bg-green-50 mb-5 text-green-500 font-medium rounded-lg inline-block" id="notice"><%= notice %></p>
+  <p
+    class="py-2 px-3 bg-green-50 mb-5 text-green-500 font-medium rounded-lg inline-block"
+    id="notice"
+  >
+    <%= notice %>
+  </p>
   <% end %>
 
   <div class="flex justify-between items-center">
@@ -9,35 +14,46 @@
 
   <div id="properties" class="min-w-full">
     <table class="table table-striped">
-    <thead>
-    <tr>
-      <th>Name</th>
-      <th>Address</th>
-      <th>Price</th>
-      <th>Rooms</th>
-      <th>Bathrooms</th>
-      <th>Images</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Address</th>
+          <th>Offer</th>
+          <th>Price</th>
+          <th>Rooms</th>
+          <th>Bathrooms</th>
+          <th>Images</th>
+          <th colspan="3"></th>
+        </tr>
+      </thead>
 
-  <tbody>
-  <% @properties.each do |property| %>
-    <tr>
-      <td><%= property.name %></td>
-      <td><%= property.address %></td>
-      <td><%= property.price %></td>
-      <td><%= property.rooms %></td>
-      <td><%= property.bathrooms %></td>
-      <td><%= property.images.count %></td>
-      <td><%= link_to "Show this property", property, class: "" %></td>
-      <td><%= link_to 'Edit this property', edit_property_path(property), class: "" %></td>
-      <td><%= link_to "Destroy", property, data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %></td>
-    </tr>
-    <% end %>
-  </tbody>
-</table>
+      <tbody>
+        <% @properties.each do |property| %>
+        <tr>
+          <td><%= property.name %></td>
+          <td><%= property.address %></td>
+          <td><%= property.status %></td>
+          <% if property.status == "Rent" %>
+            <td><%= number_to_currency(property.price, precision:0) %> /m</td>
+              <% else %>
+            <td><%= number_to_currency(property.price, precision:0) %></td>
+          <% end %>
+          <td><%= property.rooms %></td>
+          <td><%= property.bathrooms %></td>
+          <td><%= property.images.count %></td>
+          <td><%= link_to "Show this property", property, class: "" %></td>
+          <td>
+            <%= link_to 'Edit this property', edit_property_path(property),
+            class: "" %>
+          </td>
+          <td>
+            <%= link_to "Destroy", property, data: { turbo_method: :delete,
+            turbo_confirm: "Are you sure?" } %>
+          </td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
     <%= link_to 'New property', new_property_path, class: "btn btn-primary" %>
-
   </div>
 </div>
