@@ -90,6 +90,7 @@ class PropertiesController < ApplicationController
       :parking_spaces,
       :details,
       :status,
+      :available_date,
       images: []
     )
   end

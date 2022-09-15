@@ -28,6 +28,8 @@ property.errors.any? %>
   options_for_select([["Rent", "Rent"], ["Sell", "Sell"]])) %>
 </div>
 
+<div class="my-5"><%= form.date_field :available_date %></div>
+
 <% 5.times do %>
 
 <div><%= form.file_field :images, multiple: true %></div>
