@@ -76,7 +76,7 @@ class PropertiesController < ApplicationController
     last_name = params[:last_name]
     email = params[:email]
     message = params[:message]
-    format.json {head :no_content}
+    ContactMailer.email_agent(agent_id, first_name, last_name, email, message)
   end 
 
   private
