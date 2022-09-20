@@ -1,0 +1,33 @@
+<ul class="nav flex-column">
+  <li class="nav-item">
+    <a class="nav-link" href="#">
+      <span data-feather="users"></span>
+      Customers
+    </a>
+  </li>
+  <li class="nav-item">
+    <%= link_to "Dashboard", dashboard_path, class:"nav-link" %>
+  </li>
+  <li class="nav-item">
+    <%= link_to accounts_path, class:"nav-link" do%>
+    <i class="fa fa-home"></i>
+    Accounts <% end %>
+  </li>
+
+  <li class="nav-item">
+    <%= link_to edit_account_registration_path, class:"nav-link" do %>
+    <i class="fa fa-user"></i>
+    Blog Post <% end %>
+  </li>
+  <li class="nav-item">
+    <%= link_to properties_path, class:"nav-link" do %>
+    <i class="fa fa-user"></i>
+    Properties <% end %>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="#">
+      <span data-feather="layers"></span>
+      Marketing
+    </a>
+  </li>
+</ul>

@@ -1,0 +1,34 @@
+<ul class="nav flex-column">
+  <li class="nav-item">
+    <a class="nav-link" href="#">
+      <span data-feather="users"></span>
+      Customers
+    </a>
+  </li>
+  <li class="nav-item">
+    <%= link_to "Dashboard", dashboard_path, class:"nav-link" %>
+  </li>
+  <li class="nav-item">
+    <%= link_to properties_path, class:"nav-link" do%>
+    <i class="fa fa-home"></i>
+    Properties <% end %>
+  </li>
+
+  <li class="nav-item">
+    <%= link_to edit_account_registration_path, class:"nav-link" do %>
+    <i class="fa fa-user"></i>
+    Account settings <% end %>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="#">
+      <span data-feather="layers"></span>
+      Viewing
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="#">
+      <span data-feather="layers"></span>
+      Settings
+    </a>
+  </li>
+</ul>

@@ -1,41 +1,6 @@
 <nav id="dashboard" class="col-md-2 mt-3 d-none d-md-block bg-light sidebar">
   <div class="sidebar-sticky">
-    <ul class="nav flex-column">
-      <li class="nav-item">
-        <a class="nav-link" href="#">
-          <span data-feather="users"></span>
-          Customers
-        </a>
-      </li>
-      <li class="nav-item">
-        <%= link_to "Dashboard", dashboard_path, class:"nav-link" %>
-      </li>
-      <li class="nav-item">
-        <%= link_to properties_path, class:"nav-link" do%>
-          <i class="fa fa-home"></i>
-          Properties
-        <% end %>
-      </li>
-
-      <li class="nav-item">
-        <%= link_to edit_account_registration_path, class:"nav-link" do %>
-        <i class="fa fa-user" ></i>
-        Account settings <% end %>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">
-          <span data-feather="layers"></span>
-          Viewing
-        </a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">
-          <span data-feather="layers"></span>
-          Settings
-        </a>
-      </li>
-    </ul>
-
+    <%= render "layouts/nav/#{current_account.admin? ? "admin" : "user"}" %>
     <h6
       class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted"
     >
@@ -45,16 +10,15 @@
       </a>
     </h6>
     <ul class="nav flex-column mb-2">
-       <li class="nav-item">
+      <li class="nav-item">
         <%= link_to edit_account_registration_path, class:"nav-link" do %>
-        <i class="fa fa-user" ></i>
+        <i class="fa fa-user"></i>
         Account settings <% end %>
       </li>
 
-
       <li class="nav-item">
         <%= link_to profile_path(current_account.id), class:"nav-link" do %>
-        <i class="fa fa-user" ></i>
+        <i class="fa fa-user"></i>
         My profile <% end %>
       </li>
     </ul>

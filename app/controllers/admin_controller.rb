@@ -1,6 +1,6 @@
 class AdminController < ApplicationController 
+    before_action :authenticate_account!
     before_action :can_access?
-
 
     def accounts
         @accounts = Account.where(admin:false)
