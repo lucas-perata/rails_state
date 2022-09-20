@@ -1,1 +1,9 @@
-<p><%= @account.first_name %> <%= @account.last_name %></p>
+<% @agent = @account %>
+<div class="d-flex justify-content-center w-2">
+  <img
+    class="profile-back"
+    src="<%= url_for(@account.background_img)%>"
+    alt="Profile background"
+    style="width: auto; height: 52vh"
+  />
+</div>

@@ -9,6 +9,7 @@ class DashboardController < ApplicationController
 
   def profile 
     @account = Account.find(params[:id])
+    @properties = Property.where(account_id: @account.id)
   end 
 
   private
