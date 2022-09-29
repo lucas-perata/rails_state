@@ -25,7 +25,8 @@ property.errors.any? %>
 
 <div class="my-5">
   <%= form.label :status %> <%= form.select(:status,
-  options_for_select([["Rent", "Rent"], ["Sell", "Sell"]])) %>
+  options_for_select([["Rent", "Rent"], ["Sell", "Sell"], ["Sold", "Sold"],
+  ["Rented", "Rented"]])) %>
 </div>
 
 <div class="my-5"><%= form.date_field :available_date %></div>
