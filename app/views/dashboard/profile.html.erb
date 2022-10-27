@@ -1,9 +1,71 @@
-<% @agent = @account %>
 <div class="d-flex justify-content-center w-2">
   <img
     class="profile-back"
-    src="<%= url_for(@account.background_img)%>"
+    src="<%= url_for(@agent.background_img)%>"
     alt="Profile background"
     style="width: auto; height: 52vh"
   />
+</div>
+
+<div class="container mt-2">
+  <div class="row">
+    <div class="col-7">
+      <div class="">
+        <p class="h2"><%= @agent.first_name + " " + @agent.last_name %></p>
+        <p class="text-muted">
+          Registered for <%= time_ago_in_words @agent.created_at %>
+        </p>
+        <div id="agent-details" class="mt-5">
+          <div id="module">
+            <p class="collapse w-75" id="collapseExample" aria-expanded="false">
+              <%= @agent.details %>
+            </p>
+            <a
+              role="button"
+              class="collapsed"
+              data-toggle="collapse"
+              href="#collapseExample"
+              aria-expanded="false"
+              aria-controls="collapseExample"
+            ></a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-sm-3 p-3 text-center">
+      <div class="row bg-light">
+        <div class="col">
+          <i class="fa fa-bed" aria-hidden="true"></i>
+          <p class="m-0">Sold</p>
+          <span class="lead"><%= @properties_sold %></span>
+        </div>
+
+        <div class="col">
+          <i class="fa fa-bath" aria-hidden="true"></i>
+          <p class="m-0">Rented</p>
+          <span class="lead"><%= @properties_rented %></span>
+        </div>
+
+        <div class="col">
+          <i class="fa fa-map"></i>
+          <p class="m-0">Sale</p>
+          <span class="lead"><%= @properties_sale %></span>
+        </div>
+
+        <div class="col">
+          <i class="fa fa-car"></i>
+          <p class="m-0">Rent</p>
+          <span class="lead"><%= @properties_rent %></span>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-2"><%= render 'properties/agent_details' %></div>
+  </div>
+
+  <div class="container">
+    <div class="h4 mb-5">Current listings</div>
+    <div class="row"><%= render 'properties/property_list'%></div>
+  </div>
 </div>
