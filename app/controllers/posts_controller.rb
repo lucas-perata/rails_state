@@ -19,6 +19,7 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.new(post_params)
+    @post.account_id = current_account.id
 
     respond_to do |format|
       if @post.save
