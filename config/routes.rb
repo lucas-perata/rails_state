@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
+  resources :posts
   get '/dashboard' => 'dashboard#index', as: :dashboard
   get '/profile/:id' => 'dashboard#profile', as: :profile
   get 'dashboard/properties'
