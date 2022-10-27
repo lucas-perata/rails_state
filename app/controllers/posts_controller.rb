@@ -1,6 +1,7 @@
 class PostsController < ApplicationController
   before_action :set_post, only: %i[ show edit update destroy ]
   before_action :authenticate_account!, only: [:edit, :update, :destroy, :create, :new]
+  before_action :sidebar
 
   def index
     @posts = Post.all
@@ -50,6 +51,12 @@ class PostsController < ApplicationController
     def set_post
       @post = Post.find(params[:id])
     end
+
+    def sidebar 
+      if account_signed_in? 
+        @show_sidebar = true 
+      end 
+    end 
 
     def post_params
       params.require(:post).permit(:title, :url, :summary, :body, :image, :account_id)
