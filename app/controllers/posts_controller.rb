@@ -4,7 +4,7 @@ class PostsController < ApplicationController
   before_action :sidebar
 
   def index
-    @posts = Post.all
+    current_account.admin? ? @posts = Post.all : @posts = Post.where(account_id: current_account.id)
   end
 
   def show
