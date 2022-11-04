@@ -8,6 +8,8 @@ class PostsController < ApplicationController
   end
 
   def show
+    @agent = @post.account
+    @properties = Property.where(account_id: @agent.id).where.not(status: "sold").where.not(status:"rented")
   end
 
   def new
