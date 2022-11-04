@@ -21,12 +21,15 @@
 
   <p>
     <strong>Image:</strong>
-    <%= post.image %>
+    <%= post.image.attached? %>
   </p>
 
   <p>
     <strong>Account:</strong>
-    <%= post.account_id %>
+    <%= post.account.first_name + " " + post.account.last_name %>
   </p>
 
+  <div> 
+    <img src="<%= post_main(post) %>" alt="" width="500px">
+  </div>
 </div>
