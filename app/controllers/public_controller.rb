@@ -7,5 +7,6 @@ class PublicController < ApplicationController
       redirect_to path and return 
     end 
     @properties = Property.latest
+    @posts = Post.latest
   end
 end
