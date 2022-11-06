@@ -3,7 +3,7 @@
 class PropertiesController < ApplicationController
   before_action :set_property, only: %i[show edit update destroy]
   before_action :authenticate_account!, only: %i[new create destroy]
-  before_action :set_sidebar, except: [:show]
+  before_action :set_sidebar, except: [:show, :for_sale, :for_rent]
 
   def index
     current_account.admin? ? @properties = Property.all  : @properties = Property.where(account_id: current_account.id)
@@ -78,6 +78,14 @@ class PropertiesController < ApplicationController
     email = params[:email]
     message = params[:message]
     ContactMailer.email_agent(agent_id, first_name, last_name, email, message)
+  end 
+
+  def for_sale
+    @properties = Property.sale
+  end 
+
+  def for_rent
+    @properties = Property.rent
   end 
 
   private

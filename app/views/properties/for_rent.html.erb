@@ -1,0 +1,25 @@
+<section id="latest-properties" class="mb-5">
+    <div class="container">
+      <h2 class="mt-5 mb-4">Latest properties for rent</h2>
+      <div class="row grid">
+        <% @properties.each do |property| %>
+        <div class="col-sm-4 col-2 border mb-2">
+            <div class="property-latest-img" style="background-image: url(<%= property_image_url(property)%>)">
+                <%= link_to "", property_path(property), class:"link-latest" %>
+            </div>
+              <h2><%= property.name %></h2>
+              <p><%= property.address %></p>
+            <div class="amenities">
+                <span class="mr-2"
+                  ><%= property.bathrooms %> <i class="fa fa-bath" aria-hidden="true"></i>
+                </span>
+                <span class="mr-2"><%= property.square_meters %> <i class="fa fa-map"></i> </span>
+                <span
+                  ><%= property.rooms %> <i class="fa fa-bed" aria-hidden="true"></i>
+                </span class="mr-2">
+            </div>
+        </div>
+    <% end %>
+    </div>
+    </div>
+  </section>

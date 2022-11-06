@@ -34,13 +34,15 @@
           aria-haspopup="true"
           aria-expanded="false"
         >
-          Dropdown
+          Properties
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="#">Action</a>
-          <a class="dropdown-item" href="#">Another action</a>
+          <%= link_to "For sale", properties_for_sale_path,
+          class:"dropdown-item" %> <%= link_to "For rent",
+          properties_for_rent_path, class:"dropdown-item" %>
           <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Something else here</a>
+          <%= link_to "All properties", properties_for_sale_path,
+          class:"dropdown-item" %>
         </div>
       </li>
       <% if account_signed_in? %> <%= button_to 'Sign Out',

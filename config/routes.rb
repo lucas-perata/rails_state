@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   get '/dashboard' => 'dashboard#index', as: :dashboard
   get '/profile/:id' => 'dashboard#profile', as: :profile
   get 'dashboard/properties'
+  get 'properties/for-sale'
+  get 'properties/for-rent'
   post 'agent/contact' => 'properties#email_agent' , as: :email_agent
   get "/accounts" => "admin#accounts", as: :accounts
 
