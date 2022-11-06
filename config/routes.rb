@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   get 'properties/for-sale'
   get 'properties/for-rent'
   get 'properties/all'
+  get 'properties/find/:search_term' => 'properties#find', as: :properties_find
   post 'agent/contact' => 'properties#email_agent' , as: :email_agent
   get "/accounts" => "admin#accounts", as: :accounts
 

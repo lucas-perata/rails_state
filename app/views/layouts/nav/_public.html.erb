@@ -57,16 +57,9 @@
       </li>
       <% end %>
     </ul>
-    <form class="form-inline my-2 my-lg-0">
-      <input
-        class="form-control mr-sm-2"
-        type="search"
-        placeholder="Search"
-        aria-label="Search"
-      />
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
-        Search
-      </button>
-    </form>
+    <%= form_with url: "/properties/find/:search_term", class:"form-inline my-2 my-lg-0",  method: :get do |form| %>
+        <%= text_field_tag :search, nil, placeholder: 'Search by address'  %> 
+        <%= form.submit%> 
+    <% end %>
   </div>
 </nav>

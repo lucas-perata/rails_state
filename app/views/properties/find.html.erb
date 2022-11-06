@@ -1,0 +1,13 @@
+<section id="latest-properties" class="mb-5">
+  <% if @properties.any? %>
+  <div class="container">
+    <h2>Results for "<%= @search_term %>"</h2>
+    <div class="row grid"><%= render "properties/property_list" %></div>
+  </div>
+  <% else %>
+  <div class="container text-center">
+    <h2 class="mt-5 mb-4">There are no properties matching your query</h2>
+    <%= link_to "Home", root_path, class:"btn btn-primary" %>
+  </div>
+  <% end %>
+</section>

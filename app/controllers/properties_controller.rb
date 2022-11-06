@@ -3,7 +3,7 @@
 class PropertiesController < ApplicationController
   before_action :set_property, only: %i[show edit update destroy]
   before_action :authenticate_account!, only: %i[new create destroy]
-  before_action :set_sidebar, except: [:show, :for_sale, :for_rent, :all]
+  before_action :set_sidebar, except: [:show, :for_sale, :for_rent, :all, :find]
 
   def index
     current_account.admin? ? @properties = Property.all  : @properties = Property.where(account_id: current_account.id)
@@ -90,6 +90,11 @@ class PropertiesController < ApplicationController
 
   def all 
     @properties = Property.all
+  end 
+
+  def find 
+    @search_term = params[:search]
+    @properties = Property.where("address LIKE ?", "%#{@search_term}%").where("status = ? OR status = ?", "Sell", "Rent")
   end 
 
   private
