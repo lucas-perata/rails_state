@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   get 'dashboard/properties'
   get 'properties/for-sale'
   get 'properties/for-rent'
+  get 'properties/all'
   post 'agent/contact' => 'properties#email_agent' , as: :email_agent
   get "/accounts" => "admin#accounts", as: :accounts
 

@@ -3,7 +3,7 @@
 class PropertiesController < ApplicationController
   before_action :set_property, only: %i[show edit update destroy]
   before_action :authenticate_account!, only: %i[new create destroy]
-  before_action :set_sidebar, except: [:show, :for_sale, :for_rent]
+  before_action :set_sidebar, except: [:show, :for_sale, :for_rent, :all]
 
   def index
     current_account.admin? ? @properties = Property.all  : @properties = Property.where(account_id: current_account.id)
@@ -86,6 +86,10 @@ class PropertiesController < ApplicationController
 
   def for_rent
     @properties = Property.rent
+  end 
+
+  def all 
+    @properties = Property.all
   end 
 
   private
