@@ -9,6 +9,7 @@ class DashboardController < ApplicationController
 
   def profile 
     @agent = Account.find(params[:id])
+    @posts = Post.where(account_id: @agent.id)
     @properties = Property.where(account_id: @agent.id)
     @properties_sold = Property.where(account_id: @agent.id).sold.count 
     @properties_rented = Property.where(account_id: @agent.id).rented.count 

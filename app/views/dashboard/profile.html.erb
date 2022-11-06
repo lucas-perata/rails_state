@@ -64,8 +64,17 @@
     <div class="col-2"><%= render 'properties/agent_details' %></div>
   </div>
 
-  <div class="container">
-    <div class="h4 mb-5">Current listings</div>
-    <div class="row"><%= render 'properties/property_list'%></div>
-  </div>
+  <% if @properties.count > 0 %>
+    <div class="container">
+      <div class="h4 mb-5">Current listings</div>
+      <div class="row"><%= render 'properties/property_list'%></div>
+    </div>
+  <% end %>
+
+  <% if @posts.any?  %>
+    <div class="container mt-5">
+      <div class="h4 mb-5">News by this agent</div>
+      <div class="row"><%= render 'posts/post_list'%></div>
+    </div>
+  <% end %>
 </div>
