@@ -7,33 +7,20 @@
       style="width: auto; height: 52vh"
     />
   </div>
-<div class="container">
-  <div class="row">
-    <div class="col-7">
-      <h2 class="h2"><%= post.title %></h2>
-      <p class="h2">
-      </p>
+  <div class="container">
+    <div class="row">
+      <div class="col-7">
+        <h2 class="h2"><%= post.title %></h2>
+        <p class="h2"></p>
 
-      <div class="">
-        <div id="post-details">
-          <%= post.body %>
+        <div class="">
+          <div id="post-details"><%= post.body %></div>
         </div>
       </div>
-    </div>
 
-    <div class="col-sm-3 p-3 text-center">
-      <div class="row bg-light">
-        
+      <div class="col-sm-3 p-3 text-center">
+        <div class="row bg-light"></div>
       </div>
     </div>
-
-    <div class="col-2"><%= render 'properties/agent_details' %></div>
-  </div>
-
-  <div class="container">
-    <% if @agent.properties.any?  %>
-      <div class="h4 mb-5">Properties by <%=@agent.first_name %></div>
-      <div class="row"><%= render 'properties/property_list'%></div>
-    <% end %>
   </div>
 </div>
