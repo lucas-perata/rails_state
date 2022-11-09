@@ -20,8 +20,8 @@
       <% @posts.each do |post| %>
       <tr>
         <td><%= post.title %></td>
-        <td><%= post.body %></td>
         <td><%= post.summary %></td>
+        <td><%= truncate(post.body, :length => 80) %></td>
         <% if current_account.admin? %>
         <th><%= post.account.first_name %></th>
         <% end %>

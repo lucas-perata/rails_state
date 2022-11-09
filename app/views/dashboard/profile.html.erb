@@ -1,10 +1,12 @@
 <div class="d-flex justify-content-center w-2">
-  <img
+  <% if @agent.background_img.present? %>
+    <img
     class="profile-back"
     src="<%= url_for(@agent.background_img)%>"
     alt="Profile background"
     style="width: auto; height: 52vh"
   />
+  <% end %>
 </div>
 
 <div class="container mt-2">
