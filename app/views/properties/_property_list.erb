@@ -1,7 +1,7 @@
 <% @properties.each do |property| unless property.status == "Sold" || property.status == "Rented" %>
-    <div class="col-sm-4 border mb-2">
-        <div class="property-latest-img" style="background-image: url(<%= property_image_url(property)%>)">
-            <%= link_to "", property_path(property), class:"link-latest" %>
+    <div class="col-sm-4 mb-2 border rounded">
+        <div class="property-latest-img rounded mt-2" style="background-image: url(<%= property_image_url(property)%>)">
+            <%= link_to "", property_path(property), class:"link-latest" %> 
         </div>
           <h2><%= property.name %></h2>
           <p><%= property.address %></p>

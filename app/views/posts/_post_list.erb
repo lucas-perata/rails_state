@@ -1,6 +1,6 @@
 <% @posts.each do |post| %>
-    <div class="col-sm-4 border mb-2">
-        <div class="property-latest-img" style="background-image: url(<%= post_main(post)%>)">
+    <div class="col-sm-4 mb-2 border rounded">
+        <div class="property-latest-img rounded mt-3" style="background-image: url(<%= post_main(post)%>)">
             <%= link_to "", post_path(post), class:"link-latest" %>
         </div>
           <h2><%= post.title %></h2>
